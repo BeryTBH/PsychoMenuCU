@@ -331,25 +331,21 @@ namespace PsychoMenuCU
 
                 if (GUILayout.Button("Complete All Tasks"))
                 {
-                    foreach (var task in PlayerControl.LocalPlayer.myTasks)
+                    Il2CppSystem.Collections.Generic.List<PlayerTask> allTasks = PlayerControl.LocalPlayer.myTasks;
+
+                    foreach (PlayerTask task in allTasks)
                     {
-                        if (AmongUsClient.Instance && AmongUsClient.Instance.GameMode == GameModes.FreePlay)
+                        if (task.IsComplete)
                         {
-                            PlayerControl.LocalPlayer.RpcCompleteTask(task.Id);
-                            return;
+                            Log($"Task {task.Id} has already been completed, skipping");
+                            continue;
                         }
 
-                        var hostData = AmongUsClient.Instance.GetHost();
-                        if (hostData == null || hostData.Character.Data.Disconnected) return;
+                        PlayerControl.LocalPlayer.RpcCompleteTask(task.Id);
+                        task.Complete();
 
-                        if (task.IsComplete) return;
-                        foreach (var item in PlayerControl.AllPlayerControls)
-                        {
-                            var messageWriter = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)PlayerControl.RpcCalls.CompleteTask, SendOption.Reliable, AmongUsClient.Instance.GetClientIdFromCharacter(item));
-                            messageWriter.WritePacked(task.Id);
-                            AmongUsClient.Instance.FinishRpcImmediately(messageWriter);
-                        }
                         NotificationUtils.Show("Completed all tasks successfully", 4f);
+                        Log("Completed all tasks successfully!");
                     }
                 }
 
