@@ -1,6 +1,7 @@
 ﻿using Hazel;
 using Il2CppInterop.Runtime.InteropTypes.Arrays;
 using InnerNet;
+using PsychoMenuCU.Networking;
 using PsychoMenuCU.Patches;
 using PsychoMenuCU.Utilities;
 using System;
@@ -277,6 +278,18 @@ namespace PsychoMenuCU
                 }
 
                 walkInVents = GUILayout.Toggle(walkInVents, "Walk In Vents");
+
+                GUILayout.Label("Visual Animations:");
+
+                if (GUILayout.Button("Start Medbay Scan"))
+                {
+                    Network.SendSetScanner(true);
+                }
+
+                if (GUILayout.Button("Finish Medbay Scan"))
+                {
+                    Network.SendSetScanner(false);
+                }
             }
 
             // Utility Tab

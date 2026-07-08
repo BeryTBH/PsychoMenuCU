@@ -641,10 +641,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Networking\Network.cs" />
     <Compile Include="Patches\ChatPatches.cs" />
     <Compile Include="Patches\LadderPatches.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="Menu_old.cs" />
     <Compile Include="Utilities\NotificationUtils.cs" />
     <Compile Include="Patches\EmergencyMeetingPatches.cs" />
     <Compile Include="PsychoPlugin.cs" />
