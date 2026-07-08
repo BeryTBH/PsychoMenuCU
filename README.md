@@ -1,5 +1,9 @@
 # PsychoMenuCU
-PsychoMenuCU is a [BepInEx](https://github.com/BepInEx/BepInEx) Classic Us mod built with the intention for the (most likely public) first ever cheat menu.
+<div align="center">
+  <img src="https://github.com/BeryTBH/PsychoMenuCU/blob/main/img/menu.png?raw=true" alt="A screenshot showing PsychoMenuCU"/>
+</div>
+
+PsychoMenuCU is a [BepInEx](https://github.com/BepInEx/BepInEx) Classic Us mod built with the intention for the (most likely) first ever public cheat menu.
 
 # Installation and Usage
 
