@@ -14,4 +14,6 @@ Open the menu (not in the loading screen, if you do the buttons will have a tran
 
 # TODO
 - [x] Add more features
-- [ ] Fix transparent background
+- [ ] Fix transparent background on buttons when opening it in the loading screen.
+
+This mod is not affiliated with Classic Us.
