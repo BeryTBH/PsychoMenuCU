@@ -343,10 +343,10 @@ namespace PsychoMenuCU
 
                         PlayerControl.LocalPlayer.RpcCompleteTask(task.Id);
                         task.Complete();
-
-                        NotificationUtils.Show("Completed all tasks successfully", 4f);
-                        Log("Completed all tasks successfully!");
                     }
+
+                    NotificationUtils.Show("Completed all tasks successfully", 4f);
+                    Log("Completed all tasks successfully!");
                 }
 
                 EmergencyMeetingPatches.UnlimitedMeetings.enabled = GUILayout.Toggle(EmergencyMeetingPatches.UnlimitedMeetings.enabled, "Unlimited Emergency Meetings");
